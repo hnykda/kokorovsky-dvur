@@ -1,0 +1,46 @@
+{
+  "name": "kokorak",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build --turbo",
+    "start": "next start",
+    "lint:fix": "next lint --dir src --fix",
+    "lint": "next lint --dir src",
+    "lint-full:fix": "next lint --dir src --fix && knip --fix",
+    "lint-full": "next lint --dir src && knip",
+    "check": "next lint --dir src && knip && tsc --noEmit",
+    "tsc": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/react": "^3.1.0",
+    "@next/mdx": "^15.4.5",
+    "next": "^15",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9.33.0",
+    "eslint-config-next": "15.4.5",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "knip": "^5.62.0",
+    "typescript": "^5"
+  },
+  "knip": {
+    "ignoreDependencies": [
+      "eslint-config-next"
+    ],
+    "ignore": [
+      "content/**/*.mdx",
+      "scripts/capture-screenshots.js"
+    ]
+  }
+}
