@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { getAvailableReports } from "@/lib/mdx-utils";
 
 export default function BlogIndex() {

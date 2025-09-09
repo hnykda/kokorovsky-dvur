@@ -14,15 +14,20 @@ export default function Navigation() {
           <Link href="/" className="nav-logo-link">
             <Image
               src="/images/logo-simple.svg"
-              alt="Kokorak Logo"
+              alt="Kokořovský dvůr"
               width={50}
               height={50}
               className="nav-logo-image"
             />
           </Link>
-          <span className="nav-text">Kokorak</span>
+          <span className="nav-text">Kokořovský dvůr</span>
         </div>
         <ul className="nav-links">
+          <li>
+            <Link href="/" className={pathname === "/" ? "active" : ""}>
+              Domů
+            </Link>
+          </li>
           <li>
             <Link
               href="/o-nas"
@@ -39,12 +44,6 @@ export default function Navigation() {
               Kontakt
             </Link>
           </li>
-          {/* hidden for now until we have content */}
-          {/* <li>
-            <Link href="/blog" className={pathname === "/blog" ? "active" : ""}>
-              Blog
-            </Link>
-          </li> */}
         </ul>
       </div>
     </nav>

@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import { getAllReportSlugs, getReportBySlug } from "@/lib/mdx-utils";
 
 interface PageProps {
