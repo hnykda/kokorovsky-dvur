@@ -13,7 +13,7 @@ export default function Navigation() {
         <div className="nav-brand">
           <Link href="/" className="nav-logo-link">
             <Image
-              src="/logo-simple.svg"
+              src="/images/logo-simple.svg"
               alt="Kokorak Logo"
               width={50}
               height={50}
