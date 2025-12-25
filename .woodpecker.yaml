@@ -13,6 +13,12 @@ steps:
         - latest
       platforms: linux/amd64
       insecure: true
+    backend_options:
+      kubernetes:
+        nodeSelector:
+          kubernetes.io/hostname: hera
+        securityContext:
+          privileged: true
 
   - name: deploy
     image: alpine/helm:3.14.0
