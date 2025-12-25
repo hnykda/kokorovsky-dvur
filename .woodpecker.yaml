@@ -10,6 +10,7 @@ steps:
       registry: localhost:32000
       tag: ${CI_COMMIT_SHA:0:8}
       platforms: linux/amd64
+      insecure: true
 
   - name: deploy
     image: alpine/helm:3.14.0
