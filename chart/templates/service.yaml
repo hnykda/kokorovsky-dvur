@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kokorovskydvur
+spec:
+  selector:
+    app: kokorovskydvur
+  ports:
+    - port: 80

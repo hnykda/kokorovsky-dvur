@@ -1,0 +1,4 @@
+apiVersion: v2
+name: kokorovskydvur
+description: Kokorovsky Dvur Next.js static site
+version: 1.0.0
