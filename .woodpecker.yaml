@@ -7,12 +7,15 @@ steps:
     image: woodpeckerci/plugin-docker-buildx
     settings:
       repo: registry.container-registry:5000/kokorovskydvur
-      registry: http://registry.container-registry:5000
+      registry: registry.container-registry:5000
       tags:
         - ${CI_COMMIT_SHA:0:8}
         - latest
       platforms: linux/amd64
       insecure: true
+      buildkit_config: |
+        [registry."registry.container-registry:5000"]
+        http = true
 
   - name: deploy
     image: alpine/helm:3.14.0
