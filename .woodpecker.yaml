@@ -8,7 +8,9 @@ steps:
     settings:
       repo: localhost:32000/kokorovskydvur
       registry: localhost:32000
-      tag: ${CI_COMMIT_SHA:0:8}
+      tags:
+        - ${CI_COMMIT_SHA:0:8}
+        - latest
       platforms: linux/amd64
       insecure: true
 
