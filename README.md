@@ -25,3 +25,4 @@ docker push localhost:32000/kokorovskydvur:latest
 helm upgrade --install kokorovskydvur ./chart --namespace apps
 ```
 Test commit to verify Woodpecker CI pipeline - Thu Dec 25 14:38:18 CET 2025
+Test webhook - Thu Dec 25 14:41:38 CET 2025
