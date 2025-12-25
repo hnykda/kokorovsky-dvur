@@ -8,17 +8,8 @@ steps:
     settings:
       repo: localhost:32000/kokorovskydvur
       registry: localhost:32000
-      tags:
-        - ${CI_COMMIT_SHA:0:8}
-        - latest
+      tag: ${CI_COMMIT_SHA:0:8}
       platforms: linux/amd64
-      insecure: true
-    backend_options:
-      kubernetes:
-        nodeSelector:
-          kubernetes.io/hostname: hera
-        securityContext:
-          privileged: true
 
   - name: deploy
     image: alpine/helm:3.14.0
