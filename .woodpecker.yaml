@@ -8,8 +8,16 @@ steps:
     settings:
       repo: localhost:32000/kokorovskydvur
       registry: localhost:32000
-      tag: ${CI_COMMIT_SHA:0:8}
+      tags:
+        - ${CI_COMMIT_SHA:0:8}
+        - latest
       platforms: linux/amd64
+      insecure: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    backend_options:
+      kubernetes:
+        hostNetwork: true
 
   - name: deploy
     image: alpine/helm:3.14.0
