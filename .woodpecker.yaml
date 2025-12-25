@@ -13,9 +13,6 @@ steps:
         - latest
       platforms: linux/amd64
       insecure: true
-    backend_options:
-      kubernetes:
-        hostNetwork: true
 
   - name: deploy
     image: alpine/helm:3.14.0
