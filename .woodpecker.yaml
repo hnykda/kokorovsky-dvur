@@ -4,7 +4,7 @@ when:
 
 steps:
   - name: build
-    image: woodpeckerci/plugin-docker-buildx
+    image: woodpeckerci/plugin-docker-buildx:5-insecure
     settings:
       repo: registry.container-registry:5000/kokorovskydvur
       registry: registry.container-registry:5000
