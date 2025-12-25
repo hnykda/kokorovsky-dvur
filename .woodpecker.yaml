@@ -2,27 +2,34 @@ when:
   - event: push
     branch: main
 
+variables:
+  - &registry "registry.container-registry:5000"
+  - &helm_image "alpine/helm:4.0.4"
+  - &buildkit_config |
+      [registry."registry.container-registry:5000"]
+      http = true
+
 steps:
   - name: build
     image: woodpeckerci/plugin-docker-buildx:5-insecure
     settings:
       repo: registry.container-registry:5000/kokorovskydvur
-      registry: registry.container-registry:5000
+      registry: *registry
       tags:
         - ${CI_COMMIT_SHA:0:8}
         - latest
       platforms: linux/amd64
       insecure: true
-      buildkit_config: |
-        [registry."registry.container-registry:5000"]
-        http = true
+      buildkit_config: *buildkit_config
+      cache_images:
+        - registry.container-registry:5000/kokorovskydvur:cache
 
   - name: deploy
-    image: alpine/helm:3.14.0
+    image: *helm_image
     environment:
       KUBECONFIG_DATA:
         from_secret: hera_kubeconfig
     commands:
       - mkdir -p ~/.kube
       - echo "$KUBECONFIG_DATA" | base64 -d > ~/.kube/config
-      - helm upgrade --install kokorovskydvur ./chart --namespace apps --set image.tag=${CI_COMMIT_SHA:0:8}
+      - helm upgrade --install kokorovskydvur ./chart --namespace apps --rollback-on-failure --timeout 5m --set image.tag=${CI_COMMIT_SHA:0:8}
