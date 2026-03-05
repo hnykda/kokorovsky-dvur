@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
+import PlausibleProvider from "next-plausible";
 import "./globals.css";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
@@ -45,11 +46,18 @@ export default function RootLayout({
   return (
     <html lang="cs" className={`${playfair.variable} ${inter.variable}`}>
       <body className="bg-cream text-text-dark font-serif">
-        <PasswordProtection>
-          <Nav />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
-        </PasswordProtection>
+        <PlausibleProvider
+          domain="kokorovsky-dvur.cz"
+          customDomain="https://plan.danielhnyk.cz"
+          selfHosted
+          trackOutboundLinks
+        >
+          <PasswordProtection>
+            <Nav />
+            <main className="min-h-screen">{children}</main>
+            <Footer />
+          </PasswordProtection>
+        </PlausibleProvider>
       </body>
     </html>
   );
