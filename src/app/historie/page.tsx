@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import PageHeader from "../../components/PageHeader";
-import PhotoGallery from "../../components/PhotoGallery";
 
 export const metadata: Metadata = {
   title: "Historie",
@@ -8,13 +8,58 @@ export const metadata: Metadata = {
     "Stručná historie Kokořovského dvora ve Žluticích od roku 1680 do současnosti.",
 };
 
-const photos = [
-  { src: "/images/historie/sekce_historie1.webp", alt: "Kokořovský dvůr — pohled 1" },
-  { src: "/images/historie/sekce_historie2.webp", alt: "Kokořovský dvůr — pohled 2" },
-  { src: "/images/historie/sekce_historie3.webp", alt: "Kokořovský dvůr — pohled 3" },
-  { src: "/images/historie/sekce_historie4.webp", alt: "Kokořovský dvůr — pohled 4" },
-  { src: "/images/historie/sekce_historie5.webp", alt: "Kokořovský dvůr — pohled 5" },
-];
+function InlinePhoto({
+  src,
+  alt,
+  caption,
+}: {
+  src: string;
+  alt: string;
+  caption: string;
+}) {
+  return (
+    <figure className="my-10">
+      <div className="relative w-full" style={{ aspectRatio: "4/3" }}>
+        <Image src={src} alt={alt} fill className="object-cover rounded-sm" />
+      </div>
+      <figcaption className="font-sans text-sm text-text-muted mt-2 text-center italic">
+        {caption}
+      </figcaption>
+    </figure>
+  );
+}
+
+function InlinePhotoRow({
+  photos,
+  caption,
+}: {
+  photos: Array<{ src: string; alt: string }>;
+  caption: string;
+}) {
+  return (
+    <figure className="my-10">
+      <div className="grid grid-cols-2 gap-3">
+        {photos.map((p) => (
+          <div
+            key={p.src}
+            className="relative w-full"
+            style={{ aspectRatio: "4/3" }}
+          >
+            <Image
+              src={p.src}
+              alt={p.alt}
+              fill
+              className="object-cover rounded-sm"
+            />
+          </div>
+        ))}
+      </div>
+      <figcaption className="font-sans text-sm text-text-muted mt-2 text-center italic">
+        {caption}
+      </figcaption>
+    </figure>
+  );
+}
 
 export default function HistoriePage() {
   return (
@@ -35,6 +80,12 @@ export default function HistoriePage() {
           administrativní prostory, konírna a hospodářské objekty.
         </p>
 
+        <InlinePhoto
+          src="/images/historie/sekce_historie1.webp"
+          alt="Kokořovský dvůr — dobová malba z 18. století"
+          caption="Kokořovský dvůr ve své původní čtvercové dispozici na dobové malbě z 18. století."
+        />
+
         <p>
           Roku <strong>1742</strong> byl dvůr vypálen francouzským vojskem,
           které Žluticemi táhlo od Prahy na Cheb. Zcela shořela jízdárna a
@@ -54,6 +105,20 @@ export default function HistoriePage() {
           Prokop a jeho dcera Zdena dvůr v roce <strong>1886</strong> prodává
           Karlu Prokschovi z Prahy.
         </p>
+
+        <InlinePhotoRow
+          photos={[
+            {
+              src: "/images/historie/sekce_historie2.webp",
+              alt: "Kokořovský dvůr pohledem z ulice — foto 1",
+            },
+            {
+              src: "/images/historie/sekce_historie3.webp",
+              alt: "Kokořovský dvůr pohledem z ulice — foto 2",
+            },
+          ]}
+          caption="Kokořovský dvůr pohledem z ulice v první polovině 20. století"
+        />
 
         <p>
           Roku <strong>1914</strong> dvůr kupuje Josef Menčík z Vrchlabí, ten mu
@@ -77,6 +142,12 @@ export default function HistoriePage() {
           k postupnému zhoršování stavu objektů.
         </p>
 
+        <InlinePhoto
+          src="/images/historie/sekce_historie4.webp"
+          alt="Kokořovský dvůr ve druhé polovině 80. let — pohled z nádvoří"
+          caption="Kokořovský dvůr ve druhé polovině 80. let 20. století — pohled z nádvoří"
+        />
+
         <p>
           Po revoluci v roce <strong>1989</strong> je dvůr v rámci restituce
           roku <strong>1994</strong> navrácen potomkům rodiny Divišových, ale
@@ -87,16 +158,13 @@ export default function HistoriePage() {
           a pokouší se nastartovat proces záchrany již značně zdevastovaného
           objektu.
         </p>
-      </article>
 
-      <div className="bg-white/60 py-16 px-5">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="font-serif font-bold text-2xl text-primary text-center mb-10">
-            Fotogalerie
-          </h2>
-          <PhotoGallery photos={photos} />
-        </div>
-      </div>
+        <InlinePhoto
+          src="/images/historie/sekce_historie5.webp"
+          alt="Stav Kokořovského dvora v roce 2012"
+          caption="Stav Kokořovského dvora v roce 2012"
+        />
+      </article>
     </div>
   );
 }

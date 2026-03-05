@@ -12,17 +12,17 @@ const photos2024 = [
   {
     src: "/images/obnova/sekce_obnova1.webp",
     alt: "Stav dvora po převzetí 2024",
-    caption: "Stav budov po převzetí spolkem Žlutický zámek, konec roku 2024",
+    caption: "Stav budov Kokořovského dvora na konci roku 2024 po převzetí spolkem Žlutický zámek",
   },
   {
     src: "/images/obnova/sekce_obnova2.webp",
     alt: "Interiér budov dvora 2024",
-    caption: "Stav budov po převzetí spolkem Žlutický zámek, konec roku 2024",
+    caption: "Stav budov Kokořovského dvora na konci roku 2024 po převzetí spolkem Žlutický zámek",
   },
   {
     src: "/images/obnova/sekce_obnova3.webp",
     alt: "Areál Kokořovského dvora 2024",
-    caption: "Stav budov po převzetí spolkem Žlutický zámek, konec roku 2024",
+    caption: "Stav budov Kokořovského dvora na konci roku 2024 po převzetí spolkem Žlutický zámek",
   },
 ];
 
@@ -30,20 +30,17 @@ const photos2025 = [
   {
     src: "/images/obnova/sekce_obnova4.webp",
     alt: "Obnova štítů — léto 2025",
-    caption:
-      "Obnova štítů a koruny zdiva na západním křídle, léto 2025 — foto: Ján Borecký",
+    caption: "Obnova štítů a koruny zdiva na západním křídle v létě 2025 — foto: Ján Borecký",
   },
   {
     src: "/images/obnova/sekce_obnova5.webp",
     alt: "Práce na zdech — léto 2025",
-    caption:
-      "Obnova štítů a koruny zdiva na západním křídle, léto 2025 — foto: Ján Borecký",
+    caption: "Obnova štítů a koruny zdiva na západním křídle v létě 2025 — foto: Ján Borecký",
   },
   {
     src: "/images/obnova/sekce_obnova6.webp",
     alt: "Záchrana zdiva — léto 2025",
-    caption:
-      "Obnova štítů a koruny zdiva na západním křídle, léto 2025 — foto: Ján Borecký",
+    caption: "Obnova štítů a koruny zdiva na západním křídle v létě 2025 — foto: Ján Borecký",
   },
 ];
 
@@ -121,13 +118,14 @@ export default function ObnovaPage() {
               oplechovány. Z části opraveny, z části nově vyzděny byly štíty a
               komíny na západním křídle. Provizorně byla zakryta klenba nad
               průjezdem do dvora a dřevěné schodiště v jižní části západního
-              křídla. Na sklonku roku začala přípravná fáze obnovy krovu, kdy
-              byly jeho jednotlivé části montovány na nádvoří, aby mohly být
-              posléze jeřábem instalovány nahoru na budovu.
+              křídla. Tyto práce probíhaly převážně v letních měsících. Na
+              sklonku roku začala přípravná fáze obnovy krovu, kdy byly jeho
+              jednotlivé části montovány na nádvoří, aby mohly být posléze
+              jeřábem instalovány nahoru na budovu.
             </p>
             <p>
               Akce pro veřejnost byly vzhledem ke stavu areálu omezeny na
-              minimum. V lednu se konal „Den otevřeného dvora" — aby bylo po
+              minimum — v lednu se konal „Den otevřeného dvora", aby bylo po
               desetiletích uzavřeného dvora možné nahlédnout dovnitř, čehož
               využilo přes <strong>200 návštěvníků</strong>. V červnu se v
               přízemí jižního křídla konala výstava prací studentů architektury
