@@ -27,13 +27,12 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
 
-  const isHome = pathname === "/";
-  const isTransparent = isHome && !scrolled && !mobileOpen;
+  const isTransparent = pathname === "/" && !scrolled && !mobileOpen;
+  const barColor = isTransparent ? "bg-white" : "bg-primary";
 
   return (
     <nav
@@ -44,14 +43,13 @@ export default function Nav() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-5 md:px-8 py-4 flex items-center justify-between">
-        {/* Brand */}
         <Link href="/" className="flex items-center gap-3 group">
           <Image
-            src="/images/logo-simple-rounded.png"
+            src="/images/logo-simple.svg"
             alt="Kokořovský dvůr"
             width={42}
             height={42}
-            className="rounded-full transition-transform duration-300 group-hover:scale-105"
+            className="transition-transform duration-300 group-hover:scale-105"
           />
           <span
             className={`font-serif font-bold text-lg leading-tight transition-colors duration-300 hidden sm:block ${
@@ -62,7 +60,6 @@ export default function Nav() {
           </span>
         </Link>
 
-        {/* Desktop nav links */}
         <ul className="hidden lg:flex items-center gap-7">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
@@ -85,7 +82,6 @@ export default function Nav() {
           ))}
         </ul>
 
-        {/* Hamburger button */}
         <button
           className="lg:hidden flex flex-col justify-center gap-[5px] p-2 -mr-2"
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -93,24 +89,23 @@ export default function Nav() {
           aria-expanded={mobileOpen}
         >
           <span
-            className={`block w-6 h-0.5 transition-all duration-300 origin-center ${
-              isTransparent ? "bg-white" : "bg-primary"
-            } ${mobileOpen ? "translate-y-[7px] rotate-45" : ""}`}
+            className={`block w-6 h-0.5 transition-all duration-300 origin-center ${barColor} ${
+              mobileOpen ? "translate-y-[7px] rotate-45" : ""
+            }`}
           />
           <span
-            className={`block w-6 h-0.5 transition-all duration-300 ${
-              isTransparent ? "bg-white" : "bg-primary"
-            } ${mobileOpen ? "opacity-0 scale-x-0" : ""}`}
+            className={`block w-6 h-0.5 transition-all duration-300 ${barColor} ${
+              mobileOpen ? "opacity-0 scale-x-0" : ""
+            }`}
           />
           <span
-            className={`block w-6 h-0.5 transition-all duration-300 origin-center ${
-              isTransparent ? "bg-white" : "bg-primary"
-            } ${mobileOpen ? "-translate-y-[7px] -rotate-45" : ""}`}
+            className={`block w-6 h-0.5 transition-all duration-300 origin-center ${barColor} ${
+              mobileOpen ? "-translate-y-[7px] -rotate-45" : ""
+            }`}
           />
         </button>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import PageHeader from "../../components/PageHeader";
 
 export const metadata: Metadata = {
   title: "Aktuality",
@@ -6,7 +7,7 @@ export const metadata: Metadata = {
     "Novinky ze Kokořovského dvora a informace o plánovaných brigádách.",
 };
 
-// To add new items: add a new entry object to this array (newest first)
+// To add new items: prepend a new entry object here (newest first)
 const items = [
   {
     id: 1,
@@ -35,22 +36,9 @@ const items = [
 export default function AktualityPage() {
   return (
     <div className="min-h-screen bg-cream">
-      {/* Header */}
-      <div className="pt-32 pb-16 px-5 text-center">
-        <p className="font-sans text-xs tracking-[0.3em] uppercase text-accent mb-4">
-          Kokořovský dvůr
-        </p>
-        <h1
-          className="font-serif font-black text-primary"
-          style={{ fontSize: "clamp(2.2rem, 6vw, 3.6rem)", lineHeight: 1.1 }}
-        >
-          Aktuality
-        </h1>
-        <div className="w-16 h-px bg-accent mx-auto mt-6" />
-      </div>
+      <PageHeader title="Aktuality" />
 
-      {/* News feed */}
-      <div className="max-w-[68ch] mx-auto px-5 pb-20 space-y-0">
+      <div className="max-w-[68ch] mx-auto px-5 pb-20">
         {items.map((item, i) => (
           <div key={item.id}>
             <article className="py-10">
