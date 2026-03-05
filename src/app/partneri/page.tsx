@@ -92,8 +92,8 @@ export default function PartneriPage() {
           style={{ lineHeight: 1.8 }}
         >
           Na obnově Kokořovského dvora má zásluhu celá řada osob — fyzických i
-          právnických. Níže jsou vypsáni partneři nejvýznamnější. Všem
-          ostatním přispěvatelům a brigádníkům patří rovněž velké poděkování.
+          právnických. Níže jsou vypsáni partneři nejvýznamnější. Všem ostatním
+          přispěvatelům a brigádníkům patří rovněž velké poděkování.
         </p>
       </div>
 
