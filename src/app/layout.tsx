@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
-import Navigation from "../components/Navigation";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 import PasswordProtection from "../components/PasswordProtection";
 
 const playfair = Playfair_Display({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   variable: "--font-playfair",
   display: "swap",
   weight: ["400", "700", "900"],
@@ -18,15 +19,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Kokořovský dvůr | Žlutice 1680",
+  metadataBase: new URL("https://kokorovsky-dvur.cz"),
+  title: {
+    default: "Kokořovský dvůr | Žlutice 1680",
+    template: "%s | Kokořovský dvůr",
+  },
   description:
-    "Zachraňme společně Kokořovský dvůr ve Žluticích. Historická památka z roku 1680 potřebuje vaši pomoc.",
+    "Zachraňme společně Kokořovský dvůr ve Žluticích. Historická kulturní památka z roku 1680 potřebuje vaši pomoc.",
   keywords:
-    "Kokořovský dvůr, Žlutice, památka, rekonstrukce, spolek Žlutický zámek",
+    "Kokořovský dvůr, Žlutice, kulturní památka, rekonstrukce, spolek Žlutický zámek, Karlovarský kraj",
   openGraph: {
     title: "Kokořovský dvůr | Žlutice 1680",
     description: "Zachraňme společně Kokořovský dvůr ve Žluticích.",
-    images: ["/images/flyover.png"],
+    images: ["/images/tituln%C3%AD_str%C3%A1nka.jpg"],
+    locale: "cs_CZ",
+    type: "website",
   },
 };
 
@@ -37,10 +44,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="cs" className={`${playfair.variable} ${inter.variable}`}>
-      <body className={playfair.className}>
+      <body className="bg-cream text-text-dark font-serif">
         <PasswordProtection>
-          <Navigation />
-          <main className="main-content">{children}</main>
+          <Nav />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
         </PasswordProtection>
       </body>
     </html>
