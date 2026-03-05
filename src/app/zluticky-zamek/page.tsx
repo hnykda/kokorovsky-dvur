@@ -9,7 +9,11 @@ export const metadata: Metadata = {
 
 const members = [
   { name: "Ing. Ondřej Fábera", town: "Žlutice", role: "předseda spolku" },
-  { name: "MUDr. Hana Hnyková", town: "Žlutice", role: "místopředsedkyně spolku" },
+  {
+    name: "MUDr. Hana Hnyková",
+    town: "Žlutice",
+    role: "místopředsedkyně spolku",
+  },
   { name: "Ing. Michal Hnyk", town: "Žlutice", role: "" },
   { name: "Mgr. Jakub Mráz", town: "Žlutice", role: "" },
   { name: "Tomáš Ries", town: "Žlutice", role: "" },
@@ -76,28 +80,44 @@ export default function ZlutickyZamekPage() {
               </h2>
               <div className="divide-y divide-primary/8 text-sm font-sans">
                 <div className="pb-4">
-                  <p className="text-xs text-accent uppercase tracking-widest mb-1">Název</p>
-                  <p className="text-text-dark font-medium">Žlutický zámek, spolek</p>
-                </div>
-                <div className="py-4">
-                  <p className="text-xs text-accent uppercase tracking-widest mb-1">IČO</p>
-                  <p className="text-text-dark">22098372</p>
-                </div>
-                <div className="py-4">
-                  <p className="text-xs text-accent uppercase tracking-widest mb-1">Adresa</p>
-                  <p className="text-text-dark">
-                    Karlovarská 160<br />364 52 Žlutice
+                  <p className="text-xs text-accent uppercase tracking-widest mb-1">
+                    Název
+                  </p>
+                  <p className="text-text-dark font-medium">
+                    Žlutický zámek, spolek
                   </p>
                 </div>
                 <div className="py-4">
-                  <p className="text-xs text-accent uppercase tracking-widest mb-1">Datová schránka</p>
+                  <p className="text-xs text-accent uppercase tracking-widest mb-1">
+                    IČO
+                  </p>
+                  <p className="text-text-dark">22098372</p>
+                </div>
+                <div className="py-4">
+                  <p className="text-xs text-accent uppercase tracking-widest mb-1">
+                    Adresa
+                  </p>
+                  <p className="text-text-dark">
+                    Karlovarská 160
+                    <br />
+                    364 52 Žlutice
+                  </p>
+                </div>
+                <div className="py-4">
+                  <p className="text-xs text-accent uppercase tracking-widest mb-1">
+                    Datová schránka
+                  </p>
                   <p className="text-text-dark font-mono">ki2nc49</p>
                 </div>
                 <div className="py-4">
-                  <p className="text-xs text-accent uppercase tracking-widest mb-1">E-mail</p>
+                  <p className="text-xs text-accent uppercase tracking-widest mb-1">
+                    E-mail
+                  </p>
                   {/* TODO: replace with real domain email address once domain is set up */}
                   <span className="inline-flex items-center gap-2">
-                    <span className="text-text-muted italic text-xs">bude doplněn</span>
+                    <span className="text-text-muted italic text-xs">
+                      bude doplněn
+                    </span>
                     <span className="bg-accent/15 text-accent text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded font-semibold">
                       TODO
                     </span>
@@ -110,7 +130,12 @@ export default function ZlutickyZamekPage() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-primary text-white text-sm font-medium px-4 py-2.5 rounded-lg hover:bg-primary-dark transition-colors duration-200"
                   >
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
                       <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                     </svg>
                     Facebook

@@ -12,17 +12,20 @@ const photos2024 = [
   {
     src: "/images/obnova/sekce_obnova1.webp",
     alt: "Stav dvora po převzetí 2024",
-    caption: "Stav budov Kokořovského dvora na konci roku 2024 po převzetí spolkem Žlutický zámek",
+    caption:
+      "Stav budov Kokořovského dvora na konci roku 2024 po převzetí spolkem Žlutický zámek",
   },
   {
     src: "/images/obnova/sekce_obnova2.webp",
     alt: "Interiér budov dvora 2024",
-    caption: "Stav budov Kokořovského dvora na konci roku 2024 po převzetí spolkem Žlutický zámek",
+    caption:
+      "Stav budov Kokořovského dvora na konci roku 2024 po převzetí spolkem Žlutický zámek",
   },
   {
     src: "/images/obnova/sekce_obnova3.webp",
     alt: "Areál Kokořovského dvora 2024",
-    caption: "Stav budov Kokořovského dvora na konci roku 2024 po převzetí spolkem Žlutický zámek",
+    caption:
+      "Stav budov Kokořovského dvora na konci roku 2024 po převzetí spolkem Žlutický zámek",
   },
 ];
 
@@ -30,17 +33,20 @@ const photos2025 = [
   {
     src: "/images/obnova/sekce_obnova4.webp",
     alt: "Obnova štítů — léto 2025",
-    caption: "Obnova štítů a koruny zdiva na západním křídle v létě 2025 — foto: Ján Borecký",
+    caption:
+      "Obnova štítů a koruny zdiva na západním křídle v létě 2025 — foto: Ján Borecký",
   },
   {
     src: "/images/obnova/sekce_obnova5.webp",
     alt: "Práce na zdech — léto 2025",
-    caption: "Obnova štítů a koruny zdiva na západním křídle v létě 2025 — foto: Ján Borecký",
+    caption:
+      "Obnova štítů a koruny zdiva na západním křídle v létě 2025 — foto: Ján Borecký",
   },
   {
     src: "/images/obnova/sekce_obnova6.webp",
     alt: "Záchrana zdiva — léto 2025",
-    caption: "Obnova štítů a koruny zdiva na západním křídle v létě 2025 — foto: Ján Borecký",
+    caption:
+      "Obnova štítů a koruny zdiva na západním křídle v létě 2025 — foto: Ján Borecký",
   },
 ];
 

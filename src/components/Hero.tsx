@@ -39,9 +39,9 @@ export default function Hero() {
           className="font-serif text-white/85 mb-8 animate-fade-in-up animation-delay-400"
           style={{ fontSize: "clamp(1rem, 2vw, 1.2rem)", lineHeight: 1.75 }}
         >
-          Raně barokní hospodářský dvůr ve Žluticích chátral dekády.
-          V&nbsp;roce 2024 ho koupil spolek Žlutický zámek a začal ho
-          zachraňovat. Pomůžete nám?
+          Raně barokní hospodářský dvůr ve Žluticích chátral dekády. V&nbsp;roce
+          2024 ho koupil spolek Žlutický zámek a začal ho zachraňovat. Pomůžete
+          nám?
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 animate-fade-in-up animation-delay-600">
@@ -59,7 +59,6 @@ export default function Hero() {
           </Link>
         </div>
       </div>
-
     </section>
   );
 }
