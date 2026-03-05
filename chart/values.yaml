@@ -2,7 +2,9 @@ image:
   repository: localhost:32000/kokorovskydvur
   tag: latest
 
-host: kokorovskydvur.hera.danielhnyk.cz
+host: kokodvur.cz
+extraHosts:
+  - www.kokodvur.cz
 
 resources:
   requests:

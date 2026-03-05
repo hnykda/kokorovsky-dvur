@@ -9,6 +9,9 @@ spec:
     - secretName: kokorovskydvur-tls
       hosts:
         - {{ .Values.host }}
+        {{- range .Values.extraHosts }}
+        - {{ . }}
+        {{- end }}
   rules:
     - host: {{ .Values.host }}
       http:
@@ -20,3 +23,15 @@ spec:
                 name: kokorovskydvur
                 port:
                   number: 80
+    {{- range .Values.extraHosts }}
+    - host: {{ . }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kokorovskydvur
+                port:
+                  number: 80
+    {{- end }}
