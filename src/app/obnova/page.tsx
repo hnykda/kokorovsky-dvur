@@ -96,7 +96,13 @@ export default function ObnovaPage() {
               nutné kroky byl tedy jasný.
             </p>
           </div>
-          <PhotoGallery photos={photos2024} captionsBelow />
+          <figure>
+            <PhotoGallery photos={photos2024} />
+            <figcaption className="font-sans text-sm text-text-muted mt-2 text-center italic">
+              Stav budov Kokořovského dvora na konci roku 2024 po převzetí
+              spolkem Žlutický zámek
+            </figcaption>
+          </figure>
         </div>
 
         <div>
@@ -140,7 +146,13 @@ export default function ObnovaPage() {
               architektonického dědictví".
             </p>
           </div>
-          <PhotoGallery photos={photos2025} captionsBelow />
+          <figure>
+            <PhotoGallery photos={photos2025} />
+            <figcaption className="font-sans text-sm text-text-muted mt-2 text-center italic">
+              Obnova štítů a koruny zdiva na západním křídle v létě 2025 —
+              foto: Ján Borecký
+            </figcaption>
+          </figure>
         </div>
       </div>
     </div>
