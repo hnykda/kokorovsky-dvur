@@ -181,7 +181,7 @@ export default function ChciPrispetPage() {
             >
               Členem spolku se může stát fyzická osoba starší 18 let nebo
               právnická osoba po schválení členskou schůzí. Je-li Kokořovský
-              dvůr vaší srdeční záležitostí, máte čas a energii věnovat je
+              dvůr vaší srdeční záležitostí, máte čas a energii věnovat se
               spolkové činnosti a jste schopni se účastnit členských schůzí
               (zpravidla cca 4× ročně) — napište nám.
             </p>

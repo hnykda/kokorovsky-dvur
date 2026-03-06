@@ -96,7 +96,7 @@ export default function ObnovaPage() {
               nutné kroky byl tedy jasný.
             </p>
           </div>
-          <PhotoGallery photos={photos2024} />
+          <PhotoGallery photos={photos2024} captionsBelow />
         </div>
 
         <div>
@@ -140,7 +140,7 @@ export default function ObnovaPage() {
               architektonického dědictví".
             </p>
           </div>
-          <PhotoGallery photos={photos2025} />
+          <PhotoGallery photos={photos2025} captionsBelow />
         </div>
       </div>
     </div>

@@ -113,15 +113,12 @@ export default function ZlutickyZamekPage() {
                   <p className="text-xs text-accent uppercase tracking-widest mb-1">
                     E-mail
                   </p>
-                  {/* TODO: replace with real domain email address once domain is set up */}
-                  <span className="inline-flex items-center gap-2">
-                    <span className="text-text-muted italic text-xs">
-                      bude doplněn
-                    </span>
-                    <span className="bg-accent/15 text-accent text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded font-semibold">
-                      TODO
-                    </span>
-                  </span>
+                  <a
+                    href="mailto:kokodvur@frostbooks.cz"
+                    className="text-text-dark hover:text-accent transition-colors"
+                  >
+                    info@kokodvur.cz
+                  </a>
                 </div>
                 <div className="pt-4">
                   <a
