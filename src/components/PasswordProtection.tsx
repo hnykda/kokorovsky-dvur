@@ -26,7 +26,7 @@ export default function PasswordProtection({
     e.preventDefault();
     if (password.toLowerCase() === "kokorak") {
       localStorage.setItem("kokorak_auth", "authenticated");
-      setIsAuthenticated(true);
+      window.location.reload();
       setError(false);
     } else {
       setError(true);
