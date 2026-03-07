@@ -47,7 +47,7 @@ export default function RootLayout({
     <html lang="cs" className={`${playfair.variable} ${inter.variable}`}>
       <body className="bg-cream text-text-dark font-serif">
         <PlausibleProvider
-          domain="kokodvur.cz"
+          domain="kokorovskydvur.cz"
           customDomain="https://plan.danielhnyk.cz"
           selfHosted
           trackOutboundLinks

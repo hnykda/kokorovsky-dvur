@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export const dynamic = "force-static";
 
-const BASE_URL = "https://kokorovsky-dvur.cz";
+const BASE_URL = "https://kokorovskydvur.cz";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

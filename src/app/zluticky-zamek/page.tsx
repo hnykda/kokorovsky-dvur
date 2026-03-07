@@ -114,10 +114,10 @@ export default function ZlutickyZamekPage() {
                     E-mail
                   </p>
                   <a
-                    href="mailto:kokodvur@frostbooks.cz"
+                    href="mailto:info@kokorovskydvur.cz"
                     className="text-text-dark hover:text-accent transition-colors"
                   >
-                    info@kokodvur.cz
+                    info@kokorovskydvur.cz
                   </a>
                 </div>
                 <div className="pt-4">

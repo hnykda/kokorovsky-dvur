@@ -2,9 +2,9 @@ image:
   repository: localhost:32000/kokorovskydvur
   tag: latest
 
-host: kokodvur.cz
+host: kokorovskydvur.cz
 extraHosts:
-  - www.kokodvur.cz
+  - www.kokorovskydvur.cz
 
 resources:
   requests:
