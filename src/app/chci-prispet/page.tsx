@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Chci přispět",
@@ -76,27 +77,14 @@ export default function ChciPrispetPage() {
               <p className="font-sans text-white/60 text-xs mt-2">
                 Spolek Žlutický zámek, z.s.
               </p>
-              {/* TODO: add QR code for bank payment */}
-              <div className="mt-4 bg-white/10 rounded-lg h-28 flex items-center justify-center border border-white/20">
-                <div className="text-center">
-                  <svg
-                    width="28"
-                    height="28"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="rgba(255,255,255,0.4)"
-                    strokeWidth="1.5"
-                    className="mx-auto mb-2"
-                  >
-                    <rect x="3" y="3" width="7" height="7" />
-                    <rect x="14" y="3" width="7" height="7" />
-                    <rect x="14" y="14" width="7" height="7" />
-                    <rect x="3" y="14" width="7" height="7" />
-                  </svg>
-                  <p className="font-sans text-white/40 text-xs">
-                    QR kód bude doplněn
-                  </p>
-                </div>
+              <div className="mt-4 flex justify-center">
+                <Image
+                  src="/images/qrcode-payment.png"
+                  alt="QR kód pro platbu"
+                  width={160}
+                  height={160}
+                  className="rounded-lg"
+                />
               </div>
             </div>
           </div>
