@@ -4,7 +4,6 @@ import PlausibleProvider from "next-plausible";
 import "./globals.css";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import PasswordProtection from "../components/PasswordProtection";
 
 const playfair = Playfair_Display({
   subsets: ["latin", "latin-ext"],
@@ -20,7 +19,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kokorovsky-dvur.cz"),
+  metadataBase: new URL("https://kokorovskydvur.cz"),
   title: {
     default: "Kokořovský dvůr | Žlutice 1680",
     template: "%s | Kokořovský dvůr",
@@ -52,11 +51,9 @@ export default function RootLayout({
           selfHosted
           trackOutboundLinks
         >
-          <PasswordProtection>
-            <Nav />
-            <main className="min-h-screen">{children}</main>
-            <Footer />
-          </PasswordProtection>
+          <Nav />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
         </PlausibleProvider>
       </body>
     </html>
