@@ -1,10 +1,16 @@
 import type { MetadataRoute } from "next";
+import { getEventSlugs } from "../lib/aktuality";
 
 export const dynamic = "force-static";
 
 const BASE_URL = "https://kokorovskydvur.cz";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const eventPages = getEventSlugs().map((slug) => ({
+    url: `${BASE_URL}/aktuality/${slug}`,
+    priority: 0.7 as const,
+  }));
+
   return [
     { url: BASE_URL, priority: 1.0 },
     { url: `${BASE_URL}/historie`, priority: 0.8 },
@@ -13,5 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/chci-prispet`, priority: 0.9 },
     { url: `${BASE_URL}/aktuality`, priority: 0.8 },
     { url: `${BASE_URL}/partneri`, priority: 0.6 },
+    ...eventPages,
   ];
 }

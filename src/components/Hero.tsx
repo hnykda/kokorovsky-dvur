@@ -1,6 +1,8 @@
 import Link from "next/link";
+import UpcomingEvents from "./UpcomingEvents";
+import type { EventMetadata } from "../lib/aktuality";
 
-export default function Hero() {
+export default function Hero({ events }: { events: EventMetadata[] }) {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Parallax background */}
@@ -58,6 +60,8 @@ export default function Hero() {
             Přečíst příběh
           </Link>
         </div>
+
+        <UpcomingEvents events={events} />
       </div>
     </section>
   );

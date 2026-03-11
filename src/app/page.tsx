@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Hero from "../components/Hero";
+import { getEventsWithDates } from "../lib/aktuality";
 
 export const metadata: Metadata = {
   title: "Kokořovský dvůr | Žlutice 1680",
@@ -8,5 +9,6 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <Hero />;
+  const events = getEventsWithDates();
+  return <Hero events={events} />;
 }
