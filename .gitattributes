@@ -1,0 +1,4 @@
+other-content/**/*.kra filter=lfs diff=lfs merge=lfs -text
+other-content/**/*.png filter=lfs diff=lfs merge=lfs -text
+other-content/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+other-content/**/*.webp filter=lfs diff=lfs merge=lfs -text

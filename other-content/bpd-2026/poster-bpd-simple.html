@@ -10,23 +10,13 @@
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-    :root {
-      --cream: #faf7f2;
-      --brown: #8b4513;
-      --gold: #c9a84c;
-      --gold-light: #dfc370;
-      --text-dark: #2c1810;
-      --text-muted: #5c4033;
-      --bpd-orange: #c85a1e;
-    }
-
     @page { size: A4; margin: 0; }
 
     body {
       font-family: 'Playfair Display', Georgia, serif;
       font-weight: 400;
-      color: var(--text-dark);
-      background: #e8e0d4;
+      color: #000;
+      background: #ddd;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -37,83 +27,51 @@
     .poster {
       width: 210mm;
       min-height: 297mm;
-      background: var(--cream);
+      background: #fff;
       overflow: hidden;
       box-shadow: 0 25px 80px rgba(0,0,0,0.25);
       display: flex;
       flex-direction: column;
-    }
-
-    /* Hero */
-    .hero {
-      position: relative;
-      height: 220px;
-      background: url('tituln%C3%AD_str%C3%A1nka.webp') center 30% / cover no-repeat;
-      flex-shrink: 0;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(44, 24, 16, 0.1) 0%,
-        rgba(44, 24, 16, 0.25) 60%,
-        rgba(44, 24, 16, 0.6) 100%
-      );
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 1.5rem 2.5rem;
-    }
-
-    .hero-subtitle {
-      font-size: 1.8rem;
-      color: var(--gold-light);
-    }
-
-    .hero-title {
-      font-weight: 700;
-      font-size: 3.5rem;
-      color: #fff;
-      line-height: 1.15;
-      margin-bottom: 0.3rem;
-    }
-
-    /* Content */
-    .content {
-      flex: 1;
-      padding: 2rem 2.5rem;
-      display: flex;
-      flex-direction: column;
       align-items: center;
       text-align: center;
-      gap: 1.6rem;
+      padding: 3rem 2.5rem 1.5rem;
+      justify-content: center;
+      gap: 2.2rem;
     }
 
+    /* Header text */
+    .header-title {
+      font-weight: 700;
+      font-size: 4rem;
+      line-height: 1.15;
+    }
+
+    .header-subtitle {
+      font-size: 1.8rem;
+      color: #444;
+    }
+
+    /* Coat of arms */
     .coat-of-arms {
-      width: 200px;
+      width: 240px;
       height: auto;
-      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.12));
     }
 
     .venue-name {
-      font-size: 3.2rem;
+      font-size: 3.6rem;
       font-weight: 700;
-      color: var(--brown);
       line-height: 1.1;
     }
 
     .venue-sub {
       font-size: 1rem;
-      color: var(--text-muted);
+      color: #444;
+    }
+
+    .info-line {
+      font-size: 1.15rem;
+      color: #444;
+      line-height: 1.7;
     }
 
     /* Divider */
@@ -130,50 +88,41 @@
       content: '';
       flex: 1;
       height: 1px;
-      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      background: linear-gradient(to right, transparent, #999, transparent);
     }
 
     .divider-diamond {
       width: 8px;
       height: 8px;
-      background: var(--gold);
+      background: #999;
       transform: rotate(45deg);
       flex-shrink: 0;
     }
 
     /* Date & time */
     .date {
-      font-size: 2.2rem;
+      font-size: 2.6rem;
       font-weight: 700;
       line-height: 1;
     }
 
     .day-and-time {
-      font-size: 1.2rem;
-      color: var(--text-muted);
+      font-size: 1.4rem;
+      color: #444;
     }
 
-    /* Address & info */
     .address {
       font-size: 1.05rem;
-      color: var(--text-dark);
-    }
-
-    .info-line {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      max-width: none;
     }
 
     /* Footer */
     .poster-footer {
-      background: var(--brown);
-      color: var(--cream);
-      padding: 0.7rem 2rem;
+      margin-top: auto;
+      width: 100%;
+      padding-top: 1rem;
+      border-top: 1px solid #ccc;
       display: flex;
       align-items: center;
-      flex-shrink: 0;
     }
 
     .footer-third {
@@ -196,7 +145,6 @@
     .footer-third img {
       height: 32px;
       width: auto;
-      opacity: 0.9;
     }
 
     .footer-logo-text {
@@ -205,7 +153,7 @@
 
     .footer-url {
       font-size: 0.8rem;
-      color: var(--gold-light);
+      color: #000;
       text-decoration: underline;
       text-underline-offset: 2px;
     }
@@ -213,7 +161,6 @@
     .footer-bpd img {
       height: 44px;
       border-radius: 3px;
-      opacity: 1;
     }
 
     .footer-bpd-title {
@@ -223,7 +170,7 @@
 
     .footer-bpd-sub {
       font-size: 0.7rem;
-      opacity: 0.8;
+      color: #444;
     }
 
     /* Print */
@@ -244,42 +191,34 @@
 
 <div class="poster">
 
-  <div class="hero">
-    <div class="hero-content">
-      <div class="hero-title">Prohlídka</div>
-      <div class="hero-subtitle">kulturní památky</div>
-    </div>
+  <div class="header-title">Prohlídka</div>
+  <div class="header-subtitle">kulturní památky</div>
+
+  <img src="../branding/finals/plne-bez-pozadi.png" alt="Erb" class="coat-of-arms">
+
+  <div>
+    <div class="venue-name">Kokořovský dvůr</div>
+    <div class="venue-sub">Žlutice, od roku 1680</div>
   </div>
 
-  <div class="content">
-
-    <img src="logo-plne.png" alt="Erb" class="coat-of-arms">
-
-    <div>
-      <div class="venue-name">Kokořovský dvůr</div>
-      <div class="venue-sub">Žlutice, od roku 1680</div>
-    </div>
-
-    <div class="info-line">
-      Přijďte se podívat na postupně obnovovaný barokní dvůr.<br>
-      Po celou dobu budou probíhat komentované prohlídky.<br>
-      Vstup volný.
-    </div>
-
-    <div class="divider"><div class="divider-diamond"></div></div>
-
-    <div>
-      <div class="date">12. dubna 2026</div>
-      <div class="day-and-time">neděle, 14:00 — 18:00</div>
-    </div>
-
-    <div class="address">Karlovarská 160, Žlutice</div>
-
+  <div class="info-line">
+    Přijďte se podívat na postupně obnovovaný barokní dvůr.<br>
+    Po celou dobu budou probíhat komentované prohlídky.<br>
+    Vstup volný.
   </div>
+
+  <div class="divider"><div class="divider-diamond"></div></div>
+
+  <div>
+    <div class="date">12. dubna 2026</div>
+    <div class="day-and-time">neděle, 14:00 — 18:00</div>
+  </div>
+
+  <div class="address">Karlovarská 160, Žlutice</div>
 
   <div class="poster-footer">
     <div class="footer-third">
-      <img src="logo-simple.svg" alt="Kokořovský dvůr logo">
+      <img src="../branding/finals/logo-simple.svg" alt="Kokořovský dvůr logo">
       <div class="footer-logo-text">Spolek Žlutický zámek</div>
     </div>
     <div class="footer-third">
