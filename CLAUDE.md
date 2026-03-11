@@ -8,7 +8,7 @@ Static export website (`output: "export"`) for Kokořovský dvůr, a Czech herit
 - **Package manager:** pnpm (use `pnpm` for scripts, `pnpx` for one-off commands)
 - **Dev:** `pnpm dev --turbopack` / **Build:** `pnpm build --turbo`
 - **Lint/check:** `pnpm check` (eslint + knip + tsc)
-- **Content owner:** Jakub Mráz emails content to Dan; content is hardcoded in page components.
+- **Content owner:** Jakub Mráz emails content to Dan; aktuality are MDX files, other content is in page components.
 
 ## Branding & Design System
 
