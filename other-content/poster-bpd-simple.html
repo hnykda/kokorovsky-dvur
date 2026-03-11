@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brány památek dokořán 2026 — Kokořovský dvůr</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    @page { size: A4; margin: 0; }
+
+    body {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 400;
+      color: #000;
+      background: #ddd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .poster {
+      width: 210mm;
+      min-height: 297mm;
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.25);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 3rem 2.5rem 1.5rem;
+      gap: 1.6rem;
+    }
+
+    /* Header text */
+    .header-title {
+      font-weight: 700;
+      font-size: 3.5rem;
+      line-height: 1.15;
+    }
+
+    .header-subtitle {
+      font-size: 1.8rem;
+      color: #444;
+    }
+
+    /* Coat of arms */
+    .coat-of-arms {
+      width: 200px;
+      height: auto;
+    }
+
+    .venue-name {
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .venue-sub {
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .info-line {
+      font-size: 1.05rem;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* Divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #999, transparent);
+    }
+
+    .divider-diamond {
+      width: 8px;
+      height: 8px;
+      background: #999;
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    /* Date & time */
+    .date {
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .day-and-time {
+      font-size: 1.2rem;
+      color: #444;
+    }
+
+    .address {
+      font-size: 1.05rem;
+    }
+
+    /* Footer */
+    .poster-footer {
+      margin-top: auto;
+      width: 100%;
+      padding-top: 1rem;
+      border-top: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-third {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .footer-third:nth-child(2) {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .footer-third:last-child {
+      justify-content: flex-end;
+    }
+
+    .footer-third img {
+      height: 32px;
+      width: auto;
+    }
+
+    .footer-logo-text {
+      font-size: 0.85rem;
+    }
+
+    .footer-url {
+      font-size: 0.8rem;
+      color: #000;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .footer-bpd img {
+      height: 44px;
+      border-radius: 3px;
+    }
+
+    .footer-bpd-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .footer-bpd-sub {
+      font-size: 0.7rem;
+      color: #444;
+    }
+
+    /* Print */
+    @media print {
+      body { background: none; padding: 0; display: block; }
+      .poster { box-shadow: none; width: 100%; min-height: 100vh; }
+    }
+
+    @media (max-width: 800px) {
+      body { padding: 0; }
+      .poster { width: 100%; min-height: 100dvh; }
+      .venue-name { font-size: 2.2rem; }
+      .coat-of-arms { width: 130px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="poster">
+
+  <div class="header-title">Prohlídka</div>
+  <div class="header-subtitle">kulturní památky</div>
+
+  <img src="logo-plne.png" alt="Erb" class="coat-of-arms">
+
+  <div>
+    <div class="venue-name">Kokořovský dvůr</div>
+    <div class="venue-sub">Žlutice, od roku 1680</div>
+  </div>
+
+  <div class="info-line">
+    Přijďte se podívat na postupně obnovovaný barokní dvůr.<br>
+    Po celou dobu budou probíhat komentované prohlídky.<br>
+    Vstup volný.
+  </div>
+
+  <div class="divider"><div class="divider-diamond"></div></div>
+
+  <div>
+    <div class="date">12. dubna 2026</div>
+    <div class="day-and-time">neděle, 14:00 — 18:00</div>
+  </div>
+
+  <div class="address">Karlovarská 160, Žlutice</div>
+
+  <div class="poster-footer">
+    <div class="footer-third">
+      <img src="logo-simple.svg" alt="Kokořovský dvůr logo">
+      <div class="footer-logo-text">Spolek Žlutický zámek</div>
+    </div>
+    <div class="footer-third">
+      <a href="https://kokorovskydvur.cz" class="footer-url">kokorovskydvur.cz</a>
+      <a href="https://www.facebook.com/kokodvur" class="footer-url">facebook.com/kokodvur</a>
+    </div>
+    <div class="footer-third footer-bpd">
+      <img src="BPD_logo_CMYK.jpg" alt="Brány památek dokořán">
+      <div>
+        <div class="footer-bpd-title">Brány památek dokořán</div>
+        <div class="footer-bpd-sub">Celostátní akce k Mezinárodnímu dni památek a sídel</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
