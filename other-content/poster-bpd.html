@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brány památek dokořán 2026 — Kokořovský dvůr</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --cream: #faf7f2;
+      --parchment: #fdf6e3;
+      --brown: #8b4513;
+      --brown-dark: #654321;
+      --gold: #c9a84c;
+      --gold-light: #dfc370;
+      --text-dark: #2c1810;
+      --text-muted: #5c4033;
+      --bpd-orange: #c85a1e;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #e8e0d4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .poster {
+      width: 210mm;
+      min-height: 297mm;
+      background: var(--cream);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.25);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top hero section with background image */
+    .hero {
+      position: relative;
+      height: 220px;
+      background: url('tituln%C3%AD_str%C3%A1nka.webp') center 30% / cover no-repeat;
+      flex-shrink: 0;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(44, 24, 16, 0.1) 0%,
+        rgba(44, 24, 16, 0.25) 60%,
+        rgba(44, 24, 16, 0.6) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem 2.5rem;
+    }
+
+    .hero-subtitle {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: 2.4rem;
+      color: #fff;
+      line-height: 1.15;
+    }
+
+    /* BPD event banner */
+    .bpd-banner {
+      background: var(--bpd-orange);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.9rem 2.5rem;
+      flex-shrink: 0;
+    }
+
+    .bpd-banner img {
+      height: 52px;
+      width: auto;
+      flex-shrink: 0;
+      background: #fff;
+      border-radius: 4px;
+      padding: 4px;
+    }
+
+    .bpd-banner-text {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .bpd-banner-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      opacity: 0.9;
+      margin-top: 0.15rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* Main content area */
+    .content {
+      flex: 1;
+      padding: 2rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.6rem;
+    }
+
+    /* Coat of arms */
+    .coat-of-arms {
+      width: 160px;
+      height: auto;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.12));
+    }
+
+    /* Venue title block */
+    .venue-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .venue-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .venue-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--brown);
+      line-height: 1.1;
+    }
+
+    .venue-since {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--gold);
+      margin-top: 0.1rem;
+    }
+
+    /* Decorative divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+    }
+
+    .divider-diamond {
+      width: 8px;
+      height: 8px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    /* Date & time block */
+    .datetime-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .date-day {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    .date-main {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1;
+    }
+
+    .time {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--brown);
+      letter-spacing: 0.05em;
+    }
+
+    /* Address */
+    .address {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+    }
+
+    .address-street {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    .address-city {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    /* Info line */
+    .info-line {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 380px;
+    }
+
+    /* Footer */
+    .poster-footer {
+      background: var(--brown);
+      color: var(--cream);
+      padding: 1rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .footer-logo img {
+      height: 36px;
+      width: auto;
+      opacity: 0.9;
+    }
+
+    .footer-logo-text {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--cream);
+      opacity: 0.9;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.2rem;
+    }
+
+    .footer-url {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--gold-light);
+      letter-spacing: 0.03em;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+        display: block;
+      }
+      .poster {
+        box-shadow: none;
+        width: 100%;
+        min-height: 100vh;
+      }
+    }
+
+    /* Responsive for smaller screens */
+    @media (max-width: 800px) {
+      body { padding: 0; }
+      .poster {
+        width: 100%;
+        min-height: 100vh;
+        min-height: 100dvh;
+      }
+      .venue-name { font-size: 2.2rem; }
+      .coat-of-arms { width: 130px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="poster">
+
+  <!-- Hero with background photo -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-subtitle">Kulturní památka od roku 1680</div>
+      <div class="hero-title">Zveme vás na prohlídku</div>
+    </div>
+  </div>
+
+  <!-- BPD event banner -->
+  <div class="bpd-banner">
+    <img src="BPD_logo_CMYK.jpg" alt="Brány památek dokořán">
+    <div>
+      <div class="bpd-banner-text">Brány památek dokořán</div>
+      <div class="bpd-banner-sub">Celostátní akce k Mezinárodnímu dni památek a sídel</div>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="content">
+
+    <img src="logo-plne.png" alt="Erb" class="coat-of-arms">
+
+    <div class="venue-block">
+      <div class="venue-label">Srdečně vás zveme</div>
+      <div class="venue-name">Kokořovský dvůr</div>
+      <div class="venue-since">Žlutice, od roku 1680</div>
+    </div>
+
+    <div class="divider">
+      <div class="divider-diamond"></div>
+    </div>
+
+    <div class="datetime-block">
+      <div class="date-day">Neděle</div>
+      <div class="date-main">12. dubna 2026</div>
+      <div class="time">14:00 — 18:00</div>
+    </div>
+
+    <div class="divider">
+      <div class="divider-diamond"></div>
+    </div>
+
+    <div class="address">
+      <div class="address-street">Karlovarská 160, Žlutice</div>
+      <div class="address-city">Karlovarský kraj</div>
+    </div>
+
+    <div class="info-line">
+      Přijďte se podívat na postupně obnovovaný barokní dvůr.<br>
+      Po celou dobu budou probíhat komentované prohlídky.<br>
+      Vstup volný.
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="poster-footer">
+    <div class="footer-logo">
+      <img src="logo-simple.svg" alt="Kokořovský dvůr logo">
+      <div class="footer-logo-text">Spolek Žlutický zámek</div>
+    </div>
+    <div class="footer-links">
+      <a href="https://kokorovskydvur.cz" class="footer-url">kokorovskydvur.cz</a>
+      <a href="https://www.facebook.com/kokodvur" class="footer-url">facebook.com/kokodvur</a>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
