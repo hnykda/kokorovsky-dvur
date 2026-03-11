@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import PageHeader from "../../components/PageHeader";
+import { getAllEvents } from "../../lib/aktuality";
+import type { EventMetadata } from "../../lib/aktuality";
 
 export const metadata: Metadata = {
   title: "Aktuality",
@@ -7,57 +10,84 @@ export const metadata: Metadata = {
     "Novinky ze Kokořovského dvora a informace o plánovaných brigádách.",
 };
 
-// To add new items: prepend a new entry object here (newest first)
-const items = [
-  {
-    id: 1,
-    date: "Únor 2026",
-    title: "Jarní brigády 2026",
-    content: (
-      <>
-        <p>
-          Veřejné brigády na Kokořovském dvoře jsou naplánovány na{" "}
-          <strong>soboty 11. dubna a 23. května 2026</strong>, vždy od 14:00
-          hodin.
-        </p>
-        <p>
-          Na programu bude vyklízení přízemí západního křídla a třídění,
-          zpracování a úklid odpadního dřeva ze snesených konstrukcí.
-        </p>
-        <p>
-          Budeme rádi za každou pomoc — přijít může kdokoli, kdo má zájem.
-          Drobné občerstvení zajištěno.
-        </p>
-      </>
-    ),
-  },
-];
+function formatEventDate(iso: string): string {
+  const d = new Date(iso + "T00:00:00");
+  return d.toLocaleDateString("cs-CZ", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+}
 
-export default function AktualityPage() {
+function DateLine({ meta }: { meta: EventMetadata }) {
+  return (
+    <p className="font-sans text-sm text-text-muted/70 mb-3">
+      Vytvořeno: {meta.date}
+      {meta.eventDate && (
+        <>
+          {" · "}
+          <span className="font-bold text-accent">
+            Koná se: {formatEventDate(meta.eventDate)}
+          </span>
+        </>
+      )}
+    </p>
+  );
+}
+
+export default async function AktualityPage() {
+  const events = getAllEvents();
+
+  const contents = await Promise.all(
+    events.map(async (event) => {
+      const mod = await import(
+        `../../../content/aktuality/${event.filename}`
+      );
+      return { event, Content: mod.default as React.ComponentType };
+    }),
+  );
+
   return (
     <div className="min-h-screen bg-cream">
       <PageHeader title="Aktuality" />
 
       <div className="max-w-[68ch] mx-auto px-5 pb-20">
-        {items.map((item, i) => (
-          <div key={item.id}>
+        {contents.map(({ event, Content }, i) => (
+          <div key={event.filename}>
             <article className="py-10">
-              <p className="font-sans font-bold text-accent text-sm uppercase tracking-widest mb-3">
-                {item.date}
-              </p>
-              {item.title && (
-                <h2 className="font-serif font-bold text-2xl text-primary mb-4">
-                  {item.title}
-                </h2>
+              <DateLine meta={event.metadata} />
+              <h2 className="font-serif font-bold text-2xl text-primary mb-4">
+                {event.metadata.slug ? (
+                  <Link
+                    href={`/aktuality/${event.metadata.slug}`}
+                    className="hover:text-primary-dark transition-colors"
+                  >
+                    {event.metadata.title}
+                  </Link>
+                ) : (
+                  event.metadata.title
+                )}
+              </h2>
+              {event.metadata.slug ? (
+                <div
+                  className="font-sans text-text-muted"
+                  style={{ lineHeight: 1.8, fontSize: "0.975rem" }}
+                >
+                  <p className="mb-4">{event.metadata.description}</p>
+                  <Link
+                    href={`/aktuality/${event.metadata.slug}`}
+                    className="text-primary font-medium hover:text-primary-dark transition-colors"
+                  >
+                    Více →
+                  </Link>
+                </div>
+              ) : (
+                <div className="font-sans text-text-muted space-y-0">
+                  <Content />
+                </div>
               )}
-              <div
-                className="font-sans text-text-muted space-y-4"
-                style={{ lineHeight: 1.8, fontSize: "0.975rem" }}
-              >
-                {item.content}
-              </div>
             </article>
-            {i < items.length - 1 && <hr className="border-primary/10" />}
+            {i < contents.length - 1 && <hr className="border-primary/10" />}
           </div>
         ))}
       </div>

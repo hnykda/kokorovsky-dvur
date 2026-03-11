@@ -5,6 +5,7 @@
 Static export website (`output: "export"`) for Kokořovský dvůr, a Czech heritage site in Žlutice (est. 1680). Run by Spolek Žlutický zámek.
 
 - **Domain:** kokorovskydvur.cz
+- **Package manager:** pnpm (use `pnpm` for scripts, `pnpx` for one-off commands)
 - **Dev:** `pnpm dev --turbopack` / **Build:** `pnpm build --turbo`
 - **Lint/check:** `pnpm check` (eslint + knip + tsc)
 - **Content owner:** Jakub Mráz emails content to Dan; content is hardcoded in page components.
@@ -65,6 +66,9 @@ When creating standalone HTML posters or print materials:
 src/
   app/              # Next.js pages (route-based)
   components/       # Shared components (Nav, Footer, Hero, PhotoGallery, etc.)
+  lib/              # Utilities (aktuality.ts — MDX metadata reader)
+content/
+  aktuality/        # MDX event/news files (see "Adding News" below)
 public/
   images/           # Website images (hero, galleries, partners, QR code)
 other-content/
@@ -72,6 +76,7 @@ other-content/
     finals/         # Export-ready logos in various formats
     origs/          # Original source images
   bpd-2026/         # Brány památek dokořán event posters (April 2026)
+  brigady-2026/     # Brigáda poster artwork
 ```
 
 ## Git LFS
@@ -89,12 +94,30 @@ When adding new images or artwork to `other-content/`, they'll automatically be 
 - `/obnova` — Renovation by year with photo galleries
 - `/zluticky-zamek` — About the association
 - `/chci-prispet` — Donate/contribute
-- `/aktuality` — News feed (hardcoded `items` array, newest first)
+- `/aktuality` — News feed (MDX-based, newest first)
+- `/aktuality/[slug]` — Event detail pages (only for MDX files with `slug` in metadata)
 - `/partneri` — Partners logo grid
 
 ## Adding News (Aktuality)
 
-Edit the `items` array in `src/app/aktuality/page.tsx`, add new items at the top (newest first).
+Add a new `.mdx` file in `content/aktuality/`. Each file uses `export const metadata = {...}`:
+
+```js
+export const metadata = {
+  title: "Event Title",
+  date: "Březen 2026",        // display string (when created)
+  sortDate: "2026-03-01",     // ISO date for ordering
+  description: "Short teaser for the index page.",
+  slug: "my-event",           // optional — gives the event a detail page at /aktuality/my-event
+  eventDate: "2026-04-12",    // optional — ISO date of when event happens (shown on homepage)
+};
+```
+
+- **No slug** → full MDX body rendered inline on the index page, no detail page
+- **Has slug** → description + "Více →" link on index, full MDX body on the detail page
+- **Has eventDate** → shown in the "Nadcházející akce" section on the homepage (client-side date check)
+
+MDX files support full React components — import and use them directly (see `EventBpd2026.tsx`, `EventBrigady2026.tsx` for examples).
 
 ## ESLint Notes
 
