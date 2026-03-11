@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Next.js 15 static export website (`output: "export"`) for Kokořovský dvůr, a Czech heritage site in Žlutice (est. 1680). Run by Spolek Žlutický zámek.
+Static export website (`output: "export"`) for Kokořovský dvůr, a Czech heritage site in Žlutice (est. 1680). Run by Spolek Žlutický zámek.
 
 - **Domain:** kokorovskydvur.cz
 - **Dev:** `pnpm dev --turbopack` / **Build:** `pnpm build --turbo`
