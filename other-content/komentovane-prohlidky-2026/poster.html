@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skrz naskrz Kokořákem — komentované prohlídky Kokořovského dvora 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    @page { size: A4; margin: 0; }
+
+    body {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 400;
+      color: #1a1a1a;
+      background: #ddd;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .poster {
+      width: 210mm;
+      height: 297mm;
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.25);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Hero watercolor — full image, no crop */
+    .hero {
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Body */
+    .body {
+      flex: 1;
+      padding: 7mm 14mm 6mm;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .title {
+      font-weight: 700;
+      font-size: 2.6rem;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+    }
+
+    .subtitle {
+      font-size: 0.98rem;
+      color: #555;
+      margin-top: 0.4rem;
+    }
+
+    /* Anotace */
+    .anotace {
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: #333;
+      max-width: 165mm;
+      margin: 5mm auto 0;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .anotace .lead {
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    /* Dates — prominent */
+    .dates-block {
+      margin-top: 5mm;
+    }
+
+    .dates-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 3mm;
+    }
+
+    .dates {
+      display: flex;
+      justify-content: center;
+      gap: 7mm;
+      flex-wrap: wrap;
+    }
+
+    .date {
+      font-size: 1.85rem;
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .date-time {
+      margin-top: 4mm;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    .guide {
+      margin-top: 4mm;
+      font-size: 0.92rem;
+      color: #333;
+      font-style: italic;
+    }
+
+    /* Footer */
+    .poster-footer {
+      margin-top: auto;
+      padding-top: 4mm;
+      border-top: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6mm;
+    }
+
+    .footer-left, .footer-right {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .footer-left img {
+      height: 26px;
+      width: auto;
+    }
+
+    .footer-org {
+      font-size: 0.75rem;
+      color: #333;
+      text-align: left;
+      line-height: 1.3;
+    }
+
+    .footer-url {
+      font-size: 0.75rem;
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+
+    .footer-url-row {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      text-align: right;
+    }
+
+    /* Print */
+    @media print {
+      body { background: none; padding: 0; display: block; }
+      .poster { box-shadow: none; }
+    }
+
+    @media (max-width: 800px) {
+      body { padding: 0; }
+      .poster { width: 100%; height: auto; min-height: 100dvh; }
+      .title { font-size: 2rem; }
+      .body { padding: 6mm 6mm 6mm; }
+      .date { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="poster">
+
+  <div class="hero">
+    <img src="akvarel-dvur-print.jpg" alt="Kokořovský dvůr — akvarel">
+  </div>
+
+  <div class="body">
+
+    <div class="title">Skrz naskrz Kokořákem</div>
+    <div class="subtitle">komentovaná prohlídka Kokořovským dvorem ve Žluticích</div>
+
+    <div class="anotace">
+      <span class="lead">Vydejte se do Kokořovského dvora ve Žluticích</span>, monumentálního panského hospodářského areálu, jehož kořeny sahají až do středověku. V kulisách rozpadajících se stájí, jízdárny, černé kuchyně i bytů správců během prohlídky ožije svět každodenního provozu velkého dvora: kde se vařilo pro čeledíny, kde stáli koně vrchnosti, kdo řídil sklizeň a proč vlastně páni z Kokořova takový podnik založili. Prohlídka propojuje poutavé příběhy lidí, stavební proměny od středověku přes renesanci po baroko i současný záchranný boj spolku, který vrací „Kokořák" zpět k životu.
+    </div>
+
+    <div class="dates-block">
+      <div class="dates-label">Termíny prohlídek 2026</div>
+      <div class="dates">
+        <div class="date">7. června</div>
+        <div class="date">5. července</div>
+        <div class="date">9. srpna</div>
+        <div class="date">6. září</div>
+      </div>
+      <div class="date-time">vždy ve 14.00</div>
+      <div class="guide">Provází historik a kastelán Miloš Bělohlávek</div>
+    </div>
+
+    <div class="poster-footer">
+      <div class="footer-left">
+        <img src="../branding/finals/logo-simple.svg" alt="Kokořovský dvůr">
+        <div class="footer-org">Spolek Žlutický zámek<br>Karlovarská 160, Žlutice</div>
+      </div>
+      <div class="footer-right footer-url-row">
+        <a href="https://kokorovskydvur.cz" class="footer-url">kokorovskydvur.cz</a>
+        <a href="https://www.facebook.com/kokodvur" class="footer-url">facebook.com/kokodvur</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
