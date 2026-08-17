@@ -24,16 +24,11 @@ FROM nginx:alpine
 # Copy the static export from build stage
 COPY --from=builder /app/out /usr/share/nginx/html
 
-# Copy nginx configuration for SPA routing
-RUN echo 'server { \
-    listen 80; \
-    server_name _; \
-    root /usr/share/nginx/html; \
-    index index.html; \
-    location / { \
-        try_files $uri $uri/index.html /index.html; \
-    } \
-}' > /etc/nginx/conf.d/default.conf
+# Copy nginx configuration (SPA routing + first-party Plausible proxy)
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Fail the build, not the rollout, if the config is malformed.
+RUN nginx -t
 
 EXPOSE 80
 
