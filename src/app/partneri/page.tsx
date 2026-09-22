@@ -44,7 +44,11 @@ const corporate = [
   },
 ];
 
-const individuals = ["Ing. Martin Beneš", "Ing. Milan Kadera", "Ing. Robert Košťál"];
+const individuals = [
+  "Ing. Martin Beneš",
+  "Ing. Milan Kadera",
+  "Ing. Robert Košťál",
+];
 
 function PartnerCard({
   name,
@@ -121,7 +125,10 @@ export default function PartneriPage() {
           {/* Non-clickable card for individual contributors */}
           <div className="flex flex-col items-center justify-center gap-2 p-8 bg-white rounded-xl border border-primary/8">
             {individuals.map((name) => (
-              <p key={name} className="font-serif font-bold text-sm text-primary text-center">
+              <p
+                key={name}
+                className="font-serif font-bold text-sm text-primary text-center"
+              >
                 {name}
               </p>
             ))}

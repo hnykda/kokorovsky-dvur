@@ -119,6 +119,20 @@ export const metadata = {
 
 MDX files support full React components — import and use them directly (see `EventBpd2026.tsx`, `EventBrigady2026.tsx` for examples).
 
-## ESLint Notes
+## Lint / Check Notes
 
+`pnpm check` = `eslint src && knip && tsc --noEmit`. It must stay green.
+
+- **Don't reach for `next lint`.** It was removed in Next 16; the scripts call
+  `eslint` directly.
+- **`eslint-config-next` 16 ships flat configs**, so `eslint.config.mjs` spreads
+  `eslint-config-next/core-web-vitals` and `/typescript` directly. Wrapping them
+  in `FlatCompat.extends()` throws `Converting circular structure to JSON`.
 - `react/no-unescaped-entities` disabled (Czech typographic quotes „..." trigger false positives)
+- `react-hooks/set-state-in-effect` downgraded to a warning. `Nav`,
+  `UpcomingEvents` and `PasswordProtection` set state from an effect on purpose:
+  this is a static export, so "now" and `localStorage` only exist after mount.
+  Moving them to `useSyncExternalStore` would clear the warnings.
+- **knip needs the MDX compiler** in `knip.config.ts`. Aktuality import their
+  `Event*.tsx` component from MDX, which knip can't parse — without the compiler
+  every one of those components is reported as an unused file.

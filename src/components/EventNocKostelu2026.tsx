@@ -9,9 +9,7 @@ export default function EventNocKostelu2026() {
           style={{ lineHeight: 1.8 }}
         >
           <p>
-            <strong className="text-text-dark">
-              Noc kostelů ve Žluticích
-            </strong>{" "}
+            <strong className="text-text-dark">Noc kostelů ve Žluticích</strong>{" "}
             — pátek 29. května 2026. Letošní motto:{" "}
             <strong className="text-text-dark">ODVAHA</strong>.
           </p>
@@ -22,7 +20,9 @@ export default function EventNocKostelu2026() {
             </strong>
           </p>
           <ul className="mt-2 space-y-1 text-base">
-            <li>17.00 — Pohádka „O Zlatovlásce", Divadlo Šneček (farní zahrada)</li>
+            <li>
+              17.00 — Pohádka „O Zlatovlásce", Divadlo Šneček (farní zahrada)
+            </li>
             <li>18.00 — Troubení z věže</li>
             <li>18.05 — Koncert žáků ZŠ a ZUŠ Žlutice</li>
             <li>18.00–20.00 — Prohlídka zvonů</li>

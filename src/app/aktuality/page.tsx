@@ -40,9 +40,7 @@ export default async function AktualityPage() {
 
   const contents = await Promise.all(
     events.map(async (event) => {
-      const mod = await import(
-        `../../../content/aktuality/${event.filename}`
-      );
+      const mod = await import(`../../../content/aktuality/${event.filename}`);
       return { event, Content: mod.default as React.ComponentType };
     }),
   );

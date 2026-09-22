@@ -9,9 +9,7 @@ export default function EventEhd2026() {
           style={{ lineHeight: 1.8 }}
         >
           <p>
-            <strong className="text-text-dark">
-              Dny evropského dědictví
-            </strong>{" "}
+            <strong className="text-text-dark">Dny evropského dědictví</strong>{" "}
             — Kokořovský dvůr se otevírá veřejnosti v rámci celoevropské akce
             European Heritage Days.
           </p>

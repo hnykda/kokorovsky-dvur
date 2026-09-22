@@ -64,9 +64,7 @@ export default function EventBpd2026() {
         >
           Kokořovský dvůr
         </h2>
-        <p className="font-serif text-text-muted mt-1">
-          Žlutice, od roku 1680
-        </p>
+        <p className="font-serif text-text-muted mt-1">Žlutice, od roku 1680</p>
 
         {/* Info */}
         <p

@@ -149,8 +149,8 @@ export default function ObnovaPage() {
           <figure>
             <PhotoGallery photos={photos2025} />
             <figcaption className="font-sans text-sm text-text-muted mt-2 text-center italic">
-              Obnova štítů a koruny zdiva na západním křídle v létě 2025 —
-              foto: Ján Borecký
+              Obnova štítů a koruny zdiva na západním křídle v létě 2025 — foto:
+              Ján Borecký
             </figcaption>
           </figure>
         </div>

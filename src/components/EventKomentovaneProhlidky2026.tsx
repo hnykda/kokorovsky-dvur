@@ -13,17 +13,17 @@ export default function EventKomentovaneProhlidky2026() {
               Vydejte se do Kokořovského dvora ve Žluticích
             </strong>
             , monumentálního panského hospodářského areálu, jehož kořeny sahají
-            až do středověku. V kulisách rozpadajících se stájí, jízdárny,
-            černé kuchyně i bytů správců během prohlídky ožije svět každodenního
+            až do středověku. V kulisách rozpadajících se stájí, jízdárny, černé
+            kuchyně i bytů správců během prohlídky ožije svět každodenního
             provozu velkého dvora: kde se vařilo pro čeledíny, kde stáli koně
             vrchnosti, kdo řídil sklizeň a proč vlastně páni z Kokořova takový
             podnik založili.
           </p>
           <p className="mt-3">
             Prohlídka propojuje poutavé příběhy lidí, stavební proměny od
-            středověku přes renesanci po baroko i současný záchranný boj
-            spolku, který vrací „Kokořák" zpět k životu. Panským dvorem vás
-            provede historik a kastelán Miloš Bělohlávek.
+            středověku přes renesanci po baroko i současný záchranný boj spolku,
+            který vrací „Kokořák" zpět k životu. Panským dvorem vás provede
+            historik a kastelán Miloš Bělohlávek.
           </p>
           <p className="mt-4">
             <strong className="text-text-dark">Termíny 2026:</strong>

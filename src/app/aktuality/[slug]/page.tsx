@@ -26,9 +26,7 @@ export default async function EventDetailPage({
   const event = getAllEvents().find((e) => e.metadata.slug === slug);
   if (!event) return null;
 
-  const mod = await import(
-    `../../../../content/aktuality/${event.filename}`
-  );
+  const mod = await import(`../../../../content/aktuality/${event.filename}`);
   const Content = mod.default as React.ComponentType;
 
   return (
