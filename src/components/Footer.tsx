@@ -7,6 +7,18 @@ export default function Footer() {
         </p>
         <p className="font-sans text-sm mb-6">Žlutice · Karlovarský kraj</p>
         <div className="w-12 h-px bg-accent/40 mx-auto mb-6" />
+        <p className="font-sans text-sm mb-6">
+          Spřátelený web:{" "}
+          <a
+            href="https://sovazlutice.eu"
+            className="underline decoration-accent/40 underline-offset-4 hover:text-white transition-colors"
+          >
+            SOVa — Spolek okrašlovací Vladař
+          </a>
+          <span className="block text-xs text-white/35 mt-1">
+            Drobné sakrální památky a stezky v okolí Žlutic
+          </span>
+        </p>
         <p className="font-sans text-xs text-white/35">
           © {new Date().getFullYear()} Spolek Žlutický zámek, z.s. — IČO
           22098372
