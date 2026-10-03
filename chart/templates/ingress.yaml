@@ -5,6 +5,9 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
+  # Native Traefik (not the legacy `public` ingress-nginx compat class).
+  # http->https and HSTS come from the Traefik entry point.
+  ingressClassName: traefik
   tls:
     - secretName: kokorovskydvur-tls
       hosts:
