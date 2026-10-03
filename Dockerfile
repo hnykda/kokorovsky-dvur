@@ -1,5 +1,5 @@
 # Build stage
-FROM node:20-alpine AS builder
+FROM node:24-alpine AS builder
 
 WORKDIR /app
 
@@ -19,7 +19,7 @@ COPY . .
 RUN pnpm build
 
 # Production stage - serve static files with nginx
-FROM nginx:alpine
+FROM nginx:1.31-alpine
 
 # Copy the static export from build stage
 COPY --from=builder /app/out /usr/share/nginx/html

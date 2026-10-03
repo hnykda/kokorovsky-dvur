@@ -32,4 +32,4 @@ steps:
     commands:
       - mkdir -p ~/.kube
       - echo "$KUBECONFIG_DATA" | base64 -d > ~/.kube/config
-      - helm upgrade --install kokorovskydvur ./chart --namespace apps --rollback-on-failure --timeout 5m --set image.tag=${CI_COMMIT_SHA:0:8}
+      - helm upgrade --install kokorovskydvur ./chart --namespace apps --rollback-on-failure --timeout 5m --set-string image.tag=${CI_COMMIT_SHA:0:8}
