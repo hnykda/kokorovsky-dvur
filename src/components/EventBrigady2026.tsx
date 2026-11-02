@@ -1,6 +1,23 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 
-export default function EventBrigady2026() {
+type Props = {
+  datesLabel?: string;
+  dates?: ReactNode;
+  poster?: { src: string; width: number; height: number };
+};
+
+export default function EventBrigady2026({
+  datesLabel = "Dny bitvy:",
+  dates = (
+    <>
+      11. dubna 2026 — od 14:00
+      <br />
+      23. května 2026 — od 14:00
+    </>
+  ),
+  poster = { src: "/images/brigady-2026-plakat.webp", width: 460, height: 824 },
+}: Props) {
   return (
     <div className="-mx-5 sm:-mx-8">
       <div className="bg-parchment rounded-lg overflow-hidden px-6 sm:px-10 py-8">
@@ -14,11 +31,9 @@ export default function EventBrigady2026() {
             hrůzostrašné, jež okupuje dvůr Kokořovský a odmítá se samo uklidit.
           </p>
           <p className="mt-3">
-            <strong className="text-text-dark">Dny bitvy:</strong>
+            <strong className="text-text-dark">{datesLabel}</strong>
             <br />
-            11. dubna 2026 — od 14:00
-            <br />
-            23. května 2026 — od 14:00
+            {dates}
           </p>
           <p className="mt-3">
             <strong className="text-text-dark">Výzbroj:</strong> rukavice
@@ -45,10 +60,10 @@ export default function EventBrigady2026() {
         {/* Poster image */}
         <div className="flex justify-center">
           <Image
-            src="/images/brigady-2026-plakat.webp"
+            src={poster.src}
             alt="Plakát — Hledá se dřevorubec dobrovolný"
-            width={460}
-            height={824}
+            width={poster.width}
+            height={poster.height}
             className="rounded-lg shadow-lg max-w-full h-auto"
             style={{ maxHeight: "70vh", width: "auto" }}
           />
